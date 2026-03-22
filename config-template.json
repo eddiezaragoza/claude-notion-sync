@@ -1,0 +1,22 @@
+{
+  "notion_token_env_var": "NOTION_API_TOKEN",
+  "databases": {
+    "sessions": "",
+    "memory": "",
+    "board": ""
+  },
+  "pages": {
+    "claude_md_parent": "",
+    "html_docs_catalog": ""
+  },
+  "watched_paths": {
+    "sessions_dir": "",
+    "memory_dir": "",
+    "board_file": "",
+    "claude_md_file": ""
+  },
+  "project_map": {
+    "my-project": "My Project",
+    "another-project": "Another Project"
+  }
+}

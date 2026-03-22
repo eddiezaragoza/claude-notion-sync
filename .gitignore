@@ -1,0 +1,11 @@
+notion-sync-config.json
+notion-sync-state.json
+notion-sync-queue.json
+notion-sync-conflicts.md
+sync.log
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.eggs/
