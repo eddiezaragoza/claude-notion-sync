@@ -44,7 +44,7 @@ claude-notion-sync bridges this gap. Your Notion workspace becomes a live mirror
 ### 3. Clone and Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/claude-notion-sync.git
+git clone https://github.com/eddiezaragoza/claude-notion-sync.git
 cd claude-notion-sync
 pip install -r requirements.txt
 sudo apt-get install -y inotify-tools  # Linux only
