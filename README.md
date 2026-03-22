@@ -99,6 +99,58 @@ Add this to your Claude Code `~/.claude/settings.json` under `hooks.SessionStart
 
 This ensures the watcher is running and pulls any Notion changes at the start of every session.
 
+### 8. Connect Claude Web (The Bridge)
+
+This is where it all comes together. Claude web can read AND write your Notion workspace, giving it the same context as Claude Code.
+
+1. Go to [claude.ai](https://claude.ai)
+2. Connect Notion in Settings > Integrations (if not already connected)
+3. Create a new **Project** (e.g., "My Second Brain")
+4. Add a description like: `My portable brain -- connected to Notion. Has full context on my work, session history, preferences, and active tasks from Claude Code.`
+5. Paste the following into the project **Instructions**:
+
+```
+You have access to my Notion workspace via the Notion connector. USE IT.
+
+## Before Answering Questions About My Work
+
+Always search Notion first for context. I have three databases:
+
+- **Sessions** -- search for past work, case numbers, projects, technical discoveries
+- **Memory** -- my preferences, patterns, workflows
+- **Board** -- current tasks and their status across all projects
+
+If I ask "what did we do about X" or "how did we handle Y", the answer is almost certainly in Sessions.
+
+## Writing to Notion
+
+When I ask you to remember something, save a finding, or log a decision, write it to the correct Notion database:
+
+### To save a new memory:
+Create a page in the **Memory** database with these properties:
+- **Name** (title): descriptive name
+- **Type** (select): user, feedback, project, or reference
+- **Description** (rich text): one-line summary
+- **Source File** (rich text): use format `type_short-name.md` (e.g., `feedback_prefer-polling.md`)
+
+Page body: the memory content. For feedback type, structure as: rule, **Why:** reason, **How to apply:** guidance.
+
+### To save a new session note:
+Create a page in the **Sessions** database with:
+- **Title**: `YYYY-MM-DD-project-short-topic`
+- **Date**: today's date
+- **Project** (select): the relevant project name
+
+Page body: Summary, What We Discussed, Key Decisions, Open Items sections.
+
+## Important Notes
+- This Notion workspace syncs with Claude Code. Anything you write here will be pulled into Claude Code on the next session start.
+- Do NOT delete or overwrite existing entries -- only create new ones or add to existing ones.
+- When searching, try multiple queries if the first one does not find results.
+```
+
+Now every conversation in that project has full access to your Claude Code knowledge, and anything it writes flows back to Claude Code automatically.
+
 ## CLI Reference
 
 ```bash
